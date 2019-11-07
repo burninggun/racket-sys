@@ -1,50 +1,17 @@
 import React from 'react';
-import { Container, CssBaseline, FormControl, InputLabel, Input, makeStyles } from '@material-ui/core'
-
-const useStyles = makeStyles(theme => ({
-	formControl: {
-		margin: theme.spacing(1)
-	}
-}))
-
+import { Container, CssBaseline } from '@material-ui/core'
+import {Route} from 'react-router-dom';
+import Restring from './components/Restring'
+import Navbar from './components/Navbar';
+import 'typeface-roboto';
 function App() {
-	const classes = useStyles()
 	return (
 		<React.Fragment>
 			<CssBaseline>
-				<Container>
+				{/* <Container> */}
+					<Navbar/>
+					<Route path="/stringing" component={Restring} />
 
-					<FormControl className={classes.formControl} >
-						<InputLabel htmlFor="r-name" >Racket Name</InputLabel>
-						<Input id="r-name" />
-          			</FormControl>
-
-					<FormControl className={classes.formControl} >
-						<InputLabel htmlFor="s-name">String Name</InputLabel>
-						<Input id="s-name"/>
-					</FormControl>
-
-					<FormControl className={classes.formControl}>
-						<InputLabel htmlFor="s-tension">Tension (lb)</InputLabel>
-						<Input id="s-tension"/>
-					</FormControl>
-
-					<FormControl className={classes.formControl} >
-						<InputLabel htmlFor="cust-fname" >Customer First Name</InputLabel>
-						<Input id="cust-fname"/>
-					</FormControl>
-
-					<FormControl className={classes.formControl} >
-						<InputLabel htmlFor="cust-lname">Customer Last Name</InputLabel>
-						<Input id="cust-lname"/>
-					</FormControl>
-
-					<FormControl className={classes.formControl} >
-						<InputLabel htmlFor="cust-phone">Customer Phone</InputLabel>
-						<Input id="cust-phone"/>
-					</FormControl>
-
-        		</Container>
       		</CssBaseline>
     	</React.Fragment>
 	);
