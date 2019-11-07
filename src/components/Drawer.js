@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import { makeStyles, IconButton, Drawer, List, Divider, ListItem, ListItemIcon, ListItemText} from "@material-ui/core"
+import { makeStyles, IconButton, Drawer, List, Divider, ListItem, ListItemText} from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu';
 
 

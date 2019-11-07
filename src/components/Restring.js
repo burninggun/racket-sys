@@ -14,41 +14,54 @@ const useStyles = makeStyles(theme => ({
 
 export default function Restring() {
     const classes = useStyles()
+    const [form, setForm] = React.useState({
+        r_name: '',
+        s_name: '',
+        s_tension: '',
+        cust_fname: '',
+        cust_lname: '',
+        cust_phone: '',
+    })
+
+    const handleKeyDown = event => {
+        console.log(event.target.id)
+        setForm({...form, [event.target.id]: event.target.value})
+    }
 
     return(
         <React.Fragment>
             <Grid>
                 <FormControl className={classes.formControl} >
-                    <InputLabel htmlFor="r-name" >Racket Name</InputLabel>
-                    <Input id="r-name" />
+                    <InputLabel htmlFor="r_name" >Racket Name</InputLabel>
+                    <Input id="r_name" value={form.r_name} onChange={handleKeyDown}/>
                 </FormControl>
 
                 <FormControl className={classes.formControl} >
-                    <InputLabel htmlFor="s-name">String Name</InputLabel>
-                    <Input id="s-name"/>
+                    <InputLabel htmlFor="s_name">String Name</InputLabel>
+                    <Input id="s_name" value={form.s_name} onChange={handleKeyDown} />
                 </FormControl>
 
                 <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="s-tension">Tension (lb)</InputLabel>
-                    <Input id="s-tension"/>
+                    <InputLabel htmlFor="s_tension">Tension (lb)</InputLabel>
+                    <Input type="number" id="s_tension" value={form.s_tension} onChange={handleKeyDown} />
                 </FormControl>
 
 
             </Grid>
             <Grid>
                 <FormControl className={classes.formControl} >
-                    <InputLabel htmlFor="cust-fname" >Customer First Name</InputLabel>
-                    <Input id="cust-fname"/>
+                    <InputLabel htmlFor="cust_fname" >Customer First Name</InputLabel>
+                    <Input id="cust_fname" value={form.cust_fname} onChange={handleKeyDown} />
                 </FormControl>
 
                 <FormControl className={classes.formControl} >
-                    <InputLabel htmlFor="cust-lname">Customer Last Name</InputLabel>
-                    <Input id="cust-lname"/>
+                    <InputLabel htmlFor="cust_lname">Customer Last Name</InputLabel>
+                    <Input id="cust_lname" value={form.cust_lname} onChange={handleKeyDown} />
                 </FormControl>
 
                 <FormControl className={classes.formControl} >
-                    <InputLabel htmlFor="cust-phone">Customer Phone</InputLabel>
-                    <Input id="cust-phone"/>
+                    <InputLabel htmlFor="cust_phone">Customer Phone</InputLabel>
+                    <Input type="number" id="cust_phone" value={form.cust_phone} onChange={handleKeyDown} />
                 </FormControl>
             </Grid>
             <Grid container justify="center" >
