@@ -8,7 +8,6 @@ function App() {
 	return (
 		<React.Fragment>
 			<CssBaseline>
-				{/* <Container> */}
 					<Navbar/>
 					<Route path="/stringing" component={Restring} />
 
