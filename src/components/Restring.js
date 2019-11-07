@@ -4,11 +4,20 @@ import {  Grid, FormControl, InputLabel, Input, makeStyles, Button } from '@mate
 
 const useStyles = makeStyles(theme => ({
 	formControl: {
-		margin: theme.spacing(1)
+        margin: theme.spacing(1),
+
     },
     button: {
         margin: theme.spacing(1),
         
+    },
+    grid: {
+        display: "flex",
+        justifyContent: "center",
+        [theme.breakpoints.down('xs')]: {
+            // justifyContent: "center",
+            flexDirection: 'column'
+        }
     }
 }))
 
@@ -30,7 +39,7 @@ export default function Restring() {
 
     return(
         <React.Fragment>
-            <Grid>
+            <Grid className={classes.grid} >
                 <FormControl className={classes.formControl} >
                     <InputLabel htmlFor="r_name" >Racket Name</InputLabel>
                     <Input id="r_name" value={form.r_name} onChange={handleKeyDown}/>
@@ -46,9 +55,8 @@ export default function Restring() {
                     <Input type="number" id="s_tension" value={form.s_tension} onChange={handleKeyDown} />
                 </FormControl>
 
-
             </Grid>
-            <Grid>
+            <Grid className={classes.grid} >
                 <FormControl className={classes.formControl} >
                     <InputLabel htmlFor="cust_fname" >Customer First Name</InputLabel>
                     <Input id="cust_fname" value={form.cust_fname} onChange={handleKeyDown} />
