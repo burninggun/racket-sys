@@ -22,7 +22,6 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default withRouter((props) => {
-    console.log(props)
     const classes = useStyles()
     const redirectHome = () => {
         props.history.push('/')

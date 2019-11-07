@@ -3,6 +3,7 @@ import { Container, CssBaseline } from '@material-ui/core'
 import {Route} from 'react-router-dom';
 import Restring from './components/Restring'
 import Navbar from './components/Navbar';
+import Home from './components/Home';
 import 'typeface-roboto';
 function App() {
 	return (
@@ -10,6 +11,7 @@ function App() {
 			<CssBaseline>
 				<Navbar/>
 				<Container>
+					<Route exact path="/" component={Home} />
 					<Route path="/stringing" component={Restring} />
 				</Container>
 
