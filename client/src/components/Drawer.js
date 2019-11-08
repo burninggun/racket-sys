@@ -32,7 +32,12 @@ export default () => {
             <List>
                 <Link className={classes.textDecor} to="/stringing" >
                     <ListItem button  key="string" >
-                        <ListItemText primary="string" />
+                        <ListItemText primary="New Stringing Job" />
+                    </ListItem>
+                </Link>
+                <Link className={classes.textDecor} to="/racket_inventory" >
+                    <ListItem button key="racket_inventory">
+                        <ListItemText primary="Racket Inventory" />
                     </ListItem>
                 </Link>
             </List>
