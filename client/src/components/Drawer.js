@@ -30,6 +30,11 @@ export default () => {
     const SideList = ()=> (
         <div className={classes.list} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)} >
             <List>
+                <Link className={classes.textDecor} to="/" >
+                    <ListItem button key="home">
+                        <ListItemText primary="Home" />
+                    </ListItem>
+                </Link>
                 <Link className={classes.textDecor} to="/stringing" >
                     <ListItem button  key="string" >
                         <ListItemText primary="New Stringing Job" />

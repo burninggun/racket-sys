@@ -5,6 +5,7 @@ import Restring from './components/Restring'
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import RacketInventory from './components/RacketInventory';
+import Register from './components/Register'
 import 'typeface-roboto';
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<Route exact path="/" component={Home} />
 					<Route path="/stringing" component={Restring} />
 					<Route path="/racket_inventory" component={RacketInventory}/>
+					<Route path="/register" component={Register}/>
 				</Container>
 
       		</CssBaseline>
