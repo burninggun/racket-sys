@@ -45,6 +45,11 @@ export default () => {
                         <ListItemText primary="Racket Inventory" />
                     </ListItem>
                 </Link>
+                <Link className={classes.textDecor} to="/rackets" >
+                    <ListItem button key="rackets">
+                        <ListItemText primary="Rackets" />
+                    </ListItem>
+                </Link>
             </List>
             <Divider></Divider>
         </div>
