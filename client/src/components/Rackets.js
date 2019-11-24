@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Grid, FormControl, InputLabel, Input, makeStyles, Button } from '@material-ui/core'
+import {  Grid, FormControl, TextField, makeStyles, Button } from '@material-ui/core'
 import axios from 'axios'
 
 const useStyles = makeStyles(theme => ({
@@ -20,26 +20,54 @@ const useStyles = makeStyles(theme => ({
 
 export default () => {
     const classes = useStyles()
-    const [form, setForm] = React.useState({
-        r_name: '',
+    const [form, setForm] = React.useState("")
+    const [error, setError] = React.useState({
+        show: false,
+        text: ""
     })
-    const createNewModel = async () => {
-        axios.post('/racket/new', form).then(res => {
-            console.log(res);
-        })
+
+
+    const createNewModel = () => {
+
+        if(form === ""){
+            setError({
+                show: true,
+                text: "Form cannot be blank"
+            })
+        } else {
+            axios.post('/racket/new', form).then(res => {
+                console.log(res);
+            })
+        }
+
+    
+
     }
 
+
     const handleKeyDown = event => {
-        console.log(event.target.id)
-        setForm({...form, [event.target.id]: event.target.value})
+        if(event.target.value.length !== ""){
+            setError({
+                show: false,
+                text:""
+            })
+        }
+        console.log(event.target.value)
+        setForm(event.target.value)
     }
 
     return(
         <React.Fragment>
             <Grid container justify="center" >
                 <FormControl className={classes.formControl} >
-                    <InputLabel htmlFor="r_name" >Racket Name</InputLabel>
-                    <Input id="r_name" value={form.r_name} onChange={handleKeyDown}/>
+                    <TextField
+                        id="r_name"
+                        label="Racket Model Name"
+                        error={error.show}
+                        helperText={error.text}
+                        value={form}
+                        onChange={handleKeyDown}
+                    />
                 </FormControl>
             </Grid>
             <Grid container justify="center">
